@@ -1,3 +1,3 @@
 from fastapi import FastAPI
 
-# On crée l'insrtance de notre applicaiton (équivalent du co)
+# On crée l'insrtance de notre applicaiton (équivalent du cont)
