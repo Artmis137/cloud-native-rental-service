@@ -11,4 +11,4 @@ app = FastAPI(
 # Equivalent de @RestController et @GetMapping("/")
 @app.get("/")
 def hello() -> str:
-    
+    ""
