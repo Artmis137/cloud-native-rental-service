@@ -11,4 +11,8 @@ app = FastAPI(
 # Equivalent de @RestController et @GetMapping("/")
 @app.get("/")
 def hello() -> str:
-    ""
+    """_summary_
+
+    Returns:
+        str: _description_
+    """
