@@ -1,3 +1,3 @@
 from fastapi import FastAPI
 
-# On crée l'insrtance de notre ap
+# On crée l'insrtance de notre appl
