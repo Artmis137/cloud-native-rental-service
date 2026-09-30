@@ -1,3 +1,3 @@
 from fastapi import FastAPI
 
-# On crée l'insrtance de notre applicaiton (équivalent du contexte Spring )
+# On crée l'insrtance de notre applicaiton (équivalent du contexte Spring Bo)
