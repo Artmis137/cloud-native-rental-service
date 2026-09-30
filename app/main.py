@@ -1,1 +1,1 @@
-from fa
+from fast
