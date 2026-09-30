@@ -5,5 +5,5 @@ from fastapi import FastAPI
 app = FastAPI(
     title="Car Rental API",
     description="TP Cloud Native - Service de location de voitures",
-    versio
+    version="1."
 ) 
