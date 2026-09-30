@@ -4,5 +4,5 @@ from fastapi import FastAPI
 # C'est une bonne pratique de renseigner le title et la decription pour la documentation générée
 app = FastAPI(
     title="Car Rental API",
-    decription="TP Cloud Na"
+    decription="TP Cloud Nativ"
 ) 
