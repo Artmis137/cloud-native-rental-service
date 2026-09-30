@@ -9,3 +9,4 @@ app = FastAPI(
 ) 
 
 # Equivalent de @RestController et @GetMapping("/")
+@
