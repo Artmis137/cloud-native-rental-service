@@ -1,1 +1,1 @@
-from fastapi import Fas
+from fastapi import FastAP
