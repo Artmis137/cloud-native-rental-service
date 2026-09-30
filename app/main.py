@@ -15,4 +15,4 @@ def hello() -> str:
 
     Health check endpoint basique.
     """
-    return "Hello"
+    return "Hello w"
