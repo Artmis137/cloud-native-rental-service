@@ -13,5 +13,5 @@ app = FastAPI(
 def hello() -> str:
     """_summary_
 
-    Health check end
+    Health check endpo
     """
