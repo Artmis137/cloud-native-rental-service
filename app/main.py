@@ -8,4 +8,4 @@ app = FastAPI(
     version="1.0.0"
 ) 
 
-# Equivalent de @RestController 
+# Equivalent de @RestController et
