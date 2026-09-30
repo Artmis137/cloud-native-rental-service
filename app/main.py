@@ -10,3 +10,4 @@ app = FastAPI(
 
 # Equivalent de @RestController et @GetMapping("/")
 @app.get("/")
+d
