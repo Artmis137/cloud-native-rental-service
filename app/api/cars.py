@@ -1,5 +1,5 @@
 from app.shemas.car import CarBase
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from typing import List
 
 
@@ -28,3 +28,20 @@ def get_cars() :
     # Option 2 : Avec une liste de comprehension
     # C'est souvent considéré comme plus "Pythonique" et lisible en entreprise
     return [car for car in db_cars if not car.is_rented]
+
+@router.get("/{plateNumber}", response_model=CarBase)
+def get_car(plateNumber: str) :
+    """ 
+    Retourne les détails d'une voiture spécifique via sa plaque
+    """
+    
+    # On cherche la voiture dans notre fausse de base de données
+    for car in db_cars:
+        if car.plateNumber == plateNumber:
+            return car
+        
+    # Si on parcourt toute la liste sans trouver, on lève erreur 404
+    raise HTTPException(
+        status_code=404,
+        detail=f"Car with plate number {plateNumber} not found"
+    )
