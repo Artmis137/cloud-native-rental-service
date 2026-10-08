@@ -12,3 +12,13 @@ class CarBase(BaseModel):
     brand: str 
     price: float
     is_rented: bool = False # Default value is False
+    
+class Dates(BaseModel):
+    """_summary_
+    Attributes:
+        begin (str): _description_
+        end (str): _description_
+    
+    """
+    begin: str
+    end: str
