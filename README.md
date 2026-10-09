@@ -5,6 +5,23 @@
 REST API for a car rental service, built with FastAPI.
 This project is a Python adaptation of a Java / Spring Boot assignment from the Cloud Native course (MLSD M1).
 
+## From Spring Boot to FastAPI
+
+The course presents these concepts with Spring Boot. Here is how each one maps to this implementation:
+
+| Spring Boot | FastAPI (this project) |
+|---|---|
+| `@RestController` + `@RequestMapping("/cars")` | `APIRouter(prefix="/cars")` in `app/api/cars.py` |
+| `@GetMapping` / `@PutMapping` | `@router.get` / `@router.put` |
+| `@PathVariable` | Path parameter (`plateNumber: str`) |
+| `@RequestParam` | `Query(...)` (`rent: bool`) |
+| `@RequestBody` | `Body(...)` with a Pydantic model (`Dates`) |
+| Bean Validation (`@Valid`, constraints) | Pydantic v2 models and `model_validator` |
+| `ResponseStatusException` | `HTTPException` (404, 400) |
+| `SpringApplication` + embedded Tomcat | `FastAPI()` app served by Uvicorn |
+| Maven / Gradle | uv (`pyproject.toml`, `uv.lock`) |
+| `MockMvc` / `TestRestTemplate` | pytest with FastAPI `TestClient` |
+
 ## Tech stack
 
 - **Framework:** [FastAPI](https://fastapi.tiangolo.com/)
