@@ -1,5 +1,7 @@
 # Cloud Native Car Rental Service
 
+[![CI](https://github.com/Artmis137/cloud-native-rental-service/actions/workflows/ci.yml/badge.svg)](https://github.com/Artmis137/cloud-native-rental-service/actions/workflows/ci.yml)
+
 REST API for a car rental service, built with FastAPI.
 This project is a Python adaptation of a Java / Spring Boot assignment from the Cloud Native course (MLSD M1).
 
@@ -9,6 +11,9 @@ This project is a Python adaptation of a Java / Spring Boot assignment from the 
 - **Data validation:** [Pydantic v2](https://docs.pydantic.dev/)
 - **ASGI server:** [Uvicorn](https://www.uvicorn.org/)
 - **Package manager:** [uv](https://docs.astral.sh/uv/)
+- **Tests:** pytest
+- **Containerization:** Docker
+- **CI:** GitHub Actions
 - **Python:** 3.12+
 
 ## Project structure
@@ -21,6 +26,9 @@ This project is a Python adaptation of a Java / Spring Boot assignment from the 
 │   │   └── cars.py      # /cars endpoints
 │   └── schemas/
 │       └── car.py       # Pydantic models (CarBase, Dates)
+├── tests/               # API tests (pytest)
+├── .github/workflows/   # CI pipeline (tests + Docker build)
+├── Dockerfile
 ├── pyproject.toml
 └── uv.lock
 ```
@@ -51,6 +59,23 @@ This project is a Python adaptation of a Java / Spring Boot assignment from the 
    - API root: <http://localhost:8000/>
    - Swagger UI: <http://localhost:8000/docs>
    - ReDoc: <http://localhost:8000/redoc>
+
+## Run with Docker
+
+```bash
+docker build -t car-rental-api .
+docker run -p 8000:8000 car-rental-api
+```
+
+The API is then available at <http://localhost:8000/docs>.
+
+## Tests
+
+```bash
+uv run pytest -v
+```
+
+The CI pipeline runs the test suite on every push and pull request, then builds the Docker image and checks that the container answers.
 
 ## API endpoints
 
