@@ -1,7 +1,7 @@
 [project]
 name = "tp1-rest"
 version = "0.1.0"
-description = "Add your description here"
+description = "REST API for a car rental service built with FastAPI"
 readme = "README.md"
 authors = [
     { name = "Mamadou NIMAGA", email = "mnimaga02@gmail.com" }
@@ -13,9 +13,8 @@ dependencies = [
     "uvicorn[standard]>=0.54.0",
 ]
 
-[project.scripts]
-tp1-rest = "tp1_rest:main"
-
-[build-system]
-requires = ["uv_build>=0.12.17,<0.13.0"]
-build-backend = "uv_build"
+[dependency-groups]
+dev = [
+    "httpx2>=2.13.1",
+    "pytest>=9.1.1",
+]
