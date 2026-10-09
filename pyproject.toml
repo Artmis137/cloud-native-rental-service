@@ -1,0 +1,21 @@
+[project]
+name = "tp1-rest"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Mamadou NIMAGA", email = "mnimaga02@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.142.2",
+    "pydantic>=2.13.5",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+tp1-rest = "tp1_rest:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
